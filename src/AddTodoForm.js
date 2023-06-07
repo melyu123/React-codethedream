@@ -6,7 +6,7 @@ const AddTodoForm = () => {
        <form>
         <label htmlFor='todoTitle'>Title</label>
         <input id='todoTitle'></input>
-        <button>Add</button>
+        <button> Add</button>
        </form>
     </div>
    );
