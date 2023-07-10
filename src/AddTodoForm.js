@@ -18,7 +18,7 @@ const AddTodoForm = ({onAddTodo}) => {
 
       console.log(todoObj )
 
-      onAddTodo(todoObj);
+      onAddTodo({title: todoTitle, id: Date.now()});
 
       setTodoTitle('');
 
