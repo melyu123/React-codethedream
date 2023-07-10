@@ -3,16 +3,14 @@ import TodoListItem from './TodoListItem';
 
 
 
-const TodoList = ({TodoList}) => {
-  
-   
-  
-
+const TodoList = ({todoList}) => {
   return ( 
-    <ul>
     
-      {TodoList}
-    </ul>
+      <ul>
+          {todoList.map(item => <TodoListItem key={item.id} todo={item}/>)}
+                        
+        </ul>
+   
    );
 }
  

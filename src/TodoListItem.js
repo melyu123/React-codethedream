@@ -1,15 +1,8 @@
 import React from 'react';
 
-const TodoListItem = ({todo:{title,content, bookName}}) => {
-  
+const TodoListItem = ({todo}) => {
   return ( 
-    
-       <li >
-            <span>{title}</span> 
-            <span>{content}</span>
-            <span>{bookName}</span>
-         </li>
-    
+    <li>{todo.title}</li>
    );
 }
  
