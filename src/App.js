@@ -3,9 +3,12 @@ import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
 
 const useSemiPersistentState = ()=>{
+
  const [todoList, setTodoList] = useState(
     JSON.parse(localStorage.getItem('savedTodoList')) || []
   );
+
+
 
    useEffect(()=>{
 
