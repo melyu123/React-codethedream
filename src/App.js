@@ -3,7 +3,9 @@ import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
 
 
+
 function App() {
+
 
 
 const [todoList, setTodoList] = useState([]);
@@ -24,6 +26,7 @@ const [isLoading, setIsLoading] = useState(true);
     
   },[]);
 
+
    useEffect(()=>{
     if (!isLoading){
       localStorage.setItem('savedTodoList', JSON.stringify(todoList));
@@ -34,6 +37,7 @@ const [isLoading, setIsLoading] = useState(true);
  function removeTodo(id) {
          setTodoList(todoList.filter((todo) => todo.id !== id));
      }
+
   
 
   const addTodo =(newTodo)=>{
