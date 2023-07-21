@@ -32,7 +32,11 @@ const [isLoading, setIsLoading] = useState(true);
       localStorage.setItem('savedTodoList', JSON.stringify(todoList));
      JSON.parse(localStorage.getItem('savedTodoList'));
     };
-     },[todoList]);
+       useEffect(() => {
+    if (!isLoading) {
+      localStorage.setItem('savedTodoList', JSON.stringify(todoList));
+    }
+  }, [todoList, isLoading]);
 
  function removeTodo(id) {
          setTodoList(todoList.filter((todo) => todo.id !== id));
