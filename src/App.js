@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
 
 
+
 const [todoList, setTodoList] = useState([]);
 
 const [isLoading, setIsLoading] = useState(true);
@@ -54,17 +55,25 @@ const [isLoading, setIsLoading] = useState(true);
 }
 
   useEffect(()=>{
+
     fetchData()},[]);
 
-   useEffect(()=>{
-    if (!isLoading){
+
+ 
+       useEffect(() => {
+    if (!isLoading) {
       localStorage.setItem('savedTodoList', JSON.stringify(todoList));
+
     };
      },[todoList,isLoading]);
+
+
+
 
  function removeTodo(id) {
          setTodoList(todoList.filter((todo) => todo.id !== id));
      }
+
   
 
   const addTodo =(newTodo)=>{
