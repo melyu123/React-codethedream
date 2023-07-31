@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 
@@ -35,7 +36,7 @@ const [isLoading, setIsLoading] = useState(true);
               todo:todo.fields.todo
             }
 
-          return newTodo;
+          return newTodo || [];
 
            });
 
@@ -53,23 +54,11 @@ const [isLoading, setIsLoading] = useState(true);
 }
 
   useEffect(()=>{
-    fetchData()}
-     /* new Promise((resolve, reject)=>{
-       setTimeout(
-      () => resolve({ data: { todoList:  JSON.parse(localStorage.getItem('savedTodoList')) || [] } }),
-      2000
-    )
-     }).then((result)=>{
-      setTodoList(result.data.todoList);
-      setIsLoading(false);
-     });
-    
-  } */,[]);
+    fetchData()},[]);
 
    useEffect(()=>{
     if (!isLoading){
       localStorage.setItem('savedTodoList', JSON.stringify(todoList));
-     
     };
      },[todoList,isLoading]);
 
@@ -85,12 +74,24 @@ const [isLoading, setIsLoading] = useState(true);
 
   return (
     <>
-        <h1>Todo List</h1>
-        <AddTodoForm onAddTodo={addTodo} />
-        {isLoading ? <p>Loading...</p> : <TodoList todoList={todoList} onRemoveTodo={removeTodo}/> }
+    <BrowserRouter>
+    
+    
+    <Routes>
+      <Route path='/' element={<> <h1>Todo List</h1>
+      <AddTodoForm onAddTodo={addTodo} />
+      {isLoading ? <p>Loading...</p> : <TodoList todoList={todoList} onRemoveTodo={removeTodo}/> }</>} ></Route>
+
+      <Route path='/new' element={<h1>New Todo List</h1>}></Route>
+      <Route >
+        
+      </Route>
+      
+    </Routes>
+       
         
 
-        
+    </BrowserRouter>
         
     </>
   );
