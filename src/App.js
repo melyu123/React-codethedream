@@ -36,7 +36,7 @@ const [isLoading, setIsLoading] = useState(true);
               todo:todo.fields.todo
             }
 
-          return newTodo;
+          return newTodo || [];
 
            });
 
