@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import InputWithLabel from './InputWithLabel';
+import styles from './AddTodoForm.module.css'
+
 
 
 const AddTodoForm = ({onAddTodo}) => {
@@ -27,10 +29,10 @@ const AddTodoForm = ({onAddTodo}) => {
       }
 
   return ( 
-    <div>
-       <form onSubmit={handleAddTodo}>
-        <InputWithLabel  onChange={handleTitleChange} value={todoTitle} isFocused > <strong>Title:</strong> </InputWithLabel>
-        <button> Add</button>
+    <div >
+       <form onSubmit={handleAddTodo} className={styles.inputTodos}>
+        <InputWithLabel   onChange={handleTitleChange} value={todoTitle} isFocused > <strong>Title:</strong> </InputWithLabel>
+        <button className={styles.add}> Add</button>
        </form>
     </div>
    );

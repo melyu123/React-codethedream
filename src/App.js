@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styles from './App.module.css'
 import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -76,18 +77,20 @@ const [isLoading, setIsLoading] = useState(true);
     <>
     <BrowserRouter>
     
-    
-    <Routes>
-      <Route path='/' element={<> <h1>Todo List</h1>
-      <AddTodoForm onAddTodo={addTodo} />
-      {isLoading ? <p>Loading...</p> : <TodoList todoList={todoList} onRemoveTodo={removeTodo}/> }</>} ></Route>
-
-      <Route path='/new' element={<h1>New Todo List</h1>}></Route>
-      <Route >
-        
-      </Route>
+    <div className={styles.content}>
+        <Routes >
+      
+          <Route path='/' element={<> <h1 className={styles.title}>Todo List</h1>
+          <AddTodoForm onAddTodo={addTodo} />
+          {isLoading ? <p>Loading...</p> : <TodoList todoList={todoList} onRemoveTodo={removeTodo}/> }</>} ></Route>
+          <Route path='/new' element={<h1>New Todo List</h1>}></Route>
+          <Route >
+            
+          </Route>
       
     </Routes>
+    </div>
+  
        
         
 
