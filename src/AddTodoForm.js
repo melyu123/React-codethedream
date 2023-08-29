@@ -16,12 +16,14 @@ const AddTodoForm = ({onAddTodo}) => {
  
  const handleAddTodo = (event) =>{
       event.preventDefault();
+
      
       const todoObj ={title:todoTitle, id:Date.now()};
       console.log(todoObj);
       
       onAddTodo( {title:todoTitle, id:Date.now()});
       
+
 
       setTodoTitle('');
 
