@@ -1,10 +1,9 @@
 import React, { Children } from 'react';
-import { useRef } from 'react';
-import { useEffect } from 'react';
+import styles from './InputWithLabel.module.css'
 
 
 
-const InputWithLabel = ({onChange,value,children,isFocused}) => {
+const InputWithLabel = ({onChange,value,isFocused}) => {
 
   const inputRef = React.useRef();
 
@@ -15,10 +14,14 @@ const InputWithLabel = ({onChange,value,children,isFocused}) => {
   },[isFocused]);
 
   return ( 
-    <>
-      <label htmlFor='todoTitle' >{children}</label>
-      <input ref={inputRef} id='todoTitle' name="title" onChange={onChange} value={value} autoFocus ></input>
-    </> 
+  
+
+      <label htmlFor='todoTitle' ></label>
+
+      <input className={styles.input} ref={inputRef} id='todoTitle' name="title" onChange={onChange} value={value} autoFocus ></input>
+   
+    </div>
+      
   );
 }
  
