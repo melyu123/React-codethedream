@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './InputWithLabel.module.css'
 
 const InputWithLabel = ({onChange,value,isFocused}) => {
