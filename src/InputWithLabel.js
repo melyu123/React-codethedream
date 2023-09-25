@@ -3,7 +3,7 @@ import styles from './InputWithLabel.module.css'
 
 
 
-const InputWithLabel = ({onChange,value,children,isFocused}) => {
+const InputWithLabel = ({onChange,value,isFocused}) => {
 
   const inputRef = React.useRef();
 
@@ -15,8 +15,9 @@ const InputWithLabel = ({onChange,value,children,isFocused}) => {
 
   return ( 
   
-    <div className={styles.label}>
-      <label htmlFor='todoTitle' >{children}</label>
+
+      <label htmlFor='todoTitle' ></label>
+
       <input className={styles.input} ref={inputRef} id='todoTitle' name="title" onChange={onChange} value={value} autoFocus ></input>
    
     </div>
