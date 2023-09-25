@@ -11,7 +11,6 @@ const TodoListItem = ({todo,onRemoveTodo, onEdit}) => {
         <button className={styles.remove} onClick={()=> onRemoveTodo(todo.id)}>Remove</button>
         <button className={styles.edit} onClick={()=>onEdit(todo.id)}>Edit</button>
       </div>
-      
       </li>
       
     
