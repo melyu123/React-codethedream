@@ -1,0 +1,29 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(14, 33, 68);
+  margin:150px 500px;
+  line-height: 50px;
+  color: white;
+}
+
+
+.title {
+  width: 500px;
+  height: 50px;
+  background-color: #fff;
+  color: black;
+  font-weight: 50px;
+  font-size: 30px;
+  line-height: 50px;
+  padding-top: -10px;
+  padding-left: 100px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  
+}
+
