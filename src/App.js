@@ -63,6 +63,7 @@ const [editID, setEditID] = useState(null);
     fetchData()},[]);
 
 
+
  
   useEffect(() => {
     if (!isLoading) {
@@ -82,6 +83,7 @@ const [editID, setEditID] = useState(null);
     setTodoList([...todoList,newTodo]);
 
   }
+
 
   const clearall =()=>{
     setTodoList('');
@@ -121,6 +123,7 @@ const [editID, setEditID] = useState(null);
         setTodoTitle('');
         setEditID(null);
         setEditing(false);
+
         
       }else {
         const todoObj ={title:todoTitle, id:Date.now()};

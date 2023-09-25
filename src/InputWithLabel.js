@@ -15,8 +15,9 @@ const InputWithLabel = ({onChange,value,isFocused}) => {
 
   return ( 
   
-    <div className={styles.label}>
+
       <label htmlFor='todoTitle' ></label>
+
       <input className={styles.input} ref={inputRef} id='todoTitle' name="title" onChange={onChange} value={value} autoFocus ></input>
    
     </div>
