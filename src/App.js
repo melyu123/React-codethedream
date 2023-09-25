@@ -10,21 +10,16 @@ function App() {
 
 
 const [todoList, setTodoList] = useState([]);
-
 const [isLoading, setIsLoading] = useState(true);
-
 const [editing, setEditing] = useState(false);
-
 const [todoTitle,setTodoTitle]= useState('');
 const [editID, setEditID] = useState(null);
 
  const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${process.env.REACT_APP_TABLE_NAME}/`;
  console.log(url)
  const fetchData = async() =>{
-   
-    const options = {method:'GET', headers:{'Authorization':`Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`}};
-    console.log(options)
-     
+   const options = {method:'GET', headers:{'Authorization':`Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`}};
+    
      try {
       const response = await
          fetch(url, options);
@@ -120,7 +115,7 @@ const [editID, setEditID] = useState(null);
         
         addTodo( {title:todoTitle, id:Date.now()});
         setTodoTitle('');
-git 
+
       }
  }
      
