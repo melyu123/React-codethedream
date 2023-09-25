@@ -5,7 +5,7 @@ import styles from  './todoList.module.css'
 
 
 const TodoList = ({todoList,onRemoveTodo, onclear, onEdit}) => {
-  console.log(onclear)
+ 
   return ( 
       <div className={styles.listContainer}>
        <ul className={styles.todos}>
